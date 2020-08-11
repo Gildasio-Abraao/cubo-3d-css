@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@keyframes desfoc {
+    0%{filter: blur(3px);}
+    100%{filter: blur(0px);}
+}
+@keyframes rotate {
+    0%{transform: rotateX(0deg) rotateY(-45deg);}
+    100%{transform: rotateX(-16deg) rotateY(360deg);}
+}
+.container {
+    animation: desfoc 2s;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.area-cubo {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 600;
+}
+.cubo {
+    animation: rotate 30s infinite;
+    transition: 0.5s;
+    height: 223px;
+    width: 400px;
+    transform-style: preserve-3d;
+    transform: rotateX(-45deg) rotateY(-45deg);
+}
+.parte {
+    position: absolute;
+    height: 223px;
+    width: 400px;
+    opacity: 90%;
+    background: url(../images/1.gif);
+}
+.frente{
+    transform: translateZ(250px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.direita{
+    transform: translateX(202px) rotateY(90deg) translate3d(-51px, 0px, -1px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ 
+.esquerda{
+    transform: translateX(-201px) rotateY(-90deg) translate3d(50px, 0px, 0px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ 
+.fundo{
+    transform: translateZ(-154px) rotateY(180deg) translate3d(0px, 0px, -5px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
